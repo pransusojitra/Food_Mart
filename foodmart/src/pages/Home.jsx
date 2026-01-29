@@ -9,6 +9,7 @@ import Blog from "../Component/Blog";
 import Discount from "../Component/Discount";
 import Phonepg from "../Component/Phonepg";
 import Ourproduct from "../Component/Ourproduct";
+import Detailspg from "../Component/Detailspg";
 
 
 const Home = () => {
@@ -63,6 +64,7 @@ const Home = () => {
             <Discount />
             <Phonepg />
             <Ourproduct />
+            <Detailspg />
             
         </div>
     );

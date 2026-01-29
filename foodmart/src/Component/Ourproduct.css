@@ -16,7 +16,7 @@
     cursor: pointer;
     white-space: nowrap;
     transition: all 0.2s ease;
-}
+}  
 
 .tag-btn:hover {
     background-color: #ffe1b3;

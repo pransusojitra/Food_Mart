@@ -1,0 +1,16 @@
+.details-card {
+  padding: 20px 10px;
+}
+
+.details-icon {
+  font-size: 32px;
+  color: #f4a100;
+  margin-bottom: 12px;
+}
+
+
+
+.details-card p {
+  font-size: 14px;
+  color: #6c757d;
+}
