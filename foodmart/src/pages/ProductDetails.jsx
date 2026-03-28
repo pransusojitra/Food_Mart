@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { useCart } from '../context/CartContext';
+import { API_BASE_URL, UPLOADS_BASE_URL } from '../apiConfig';
 
 const ProductDetails = () => {
     const { id } = useParams();
@@ -12,7 +13,7 @@ const ProductDetails = () => {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const res = await axios.get(`http://localhost:5000/api/products/${id}`);
+                const res = await axios.get(`${API_BASE_URL}/products/${id}`);
                 setProduct(res.data);
             } catch (err) {
                 console.error("Error fetching product:", err);
@@ -38,7 +39,7 @@ const ProductDetails = () => {
             <div className="row g-5 align-items-center">
                 <div className="col-md-6">
                     <div className="card border-0 shadow-sm rounded-4 overflow-hidden">
-                        <img src={`http://localhost:5000/${product.image}`} className="img-fluid" alt={product.title} />
+                        <img src={`${UPLOADS_BASE_URL}/${product.image}`} className="img-fluid" alt={product.title} />
                     </div>
                 </div>
                 <div className="col-md-6">

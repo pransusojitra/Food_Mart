@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Productcard from "./Productcard";
+import { API_BASE_URL } from "../apiConfig";
 
 const AdminProductList = () => {
   const [products, setProducts] = useState([]);
 
   const fetchProducts = async () => {
-    const res = await axios.get("http://localhost:5000/api/products");
+    const res = await axios.get(`${API_BASE_URL}/products`);
     setProducts(res.data);
   };
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Form, Button } from "react-bootstrap";
+import { API_BASE_URL } from "../apiConfig";
 
 const ProductForm = () => {
   const [product, setProduct] = useState({
@@ -31,7 +32,7 @@ const ProductForm = () => {
       formData.append("price", product.price);
 
       const res = await axios.post(
-        "http://localhost:5000/api/products/add",
+        `${API_BASE_URL}/products/add`,
         formData,
         {
           headers: {

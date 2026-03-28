@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Productcard.css";
+import { UPLOADS_BASE_URL } from "../apiConfig";
 
 const Productcard = ({
   id,
@@ -22,7 +23,7 @@ const Productcard = ({
       >
         <Link to={`/product/${id}`}>
             <img
-            src={`http://localhost:5000/${img}`}
+            src={`${UPLOADS_BASE_URL}/${img}`}
             alt={title}
             style={{ backgroundColor: "#fafafa", height: "13rem", width: "14rem" }}
             className="rounded-4 mx-auto mt-3"
