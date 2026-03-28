@@ -14,7 +14,6 @@ const Bestproduct = () => {
               backgroundColor: "#faece8",
               backgroundImage: `url(${photo1})`,
               backgroundRepeat: "no-repeat",
-              backgroundSize: "contain",
               minHeight: "300px",
               backgroundPositionY: "bottom",
               backgroundPositionX: "right",

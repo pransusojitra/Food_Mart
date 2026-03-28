@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Productcard.css";
 
 const Productcard = ({
+  id,
   img,
   title,
   unit,
@@ -18,15 +20,19 @@ const Productcard = ({
         className="card d-flex flex-column shadow-lg border-white rounded-4"
         style={{ width: "16rem", height: "400px" }}
       >
-        <img
-          src={`http://localhost:5000/${img}`}
-          alt={title}
-          style={{ backgroundColor: "#fafafa", height: "13rem", width: "14rem" }}
-          className="rounded-4 mx-auto mt-3"
-        />
+        <Link to={`/product/${id}`}>
+            <img
+            src={`http://localhost:5000/${img}`}
+            alt={title}
+            style={{ backgroundColor: "#fafafa", height: "13rem", width: "14rem" }}
+            className="rounded-4 mx-auto mt-3"
+            />
+        </Link>
 
         <div className="card-body d-flex flex-column gap-2">
-          <h6>{title}</h6>
+          <Link to={`/product/${id}`} className="text-decoration-none text-dark">
+            <h6>{title}</h6>
+          </Link>
 
           <div className="d-flex gap-2 align-items-center">
             <p className="mb-0">{unit}</p>

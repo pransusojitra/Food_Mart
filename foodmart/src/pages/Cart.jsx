@@ -90,9 +90,9 @@ const Cart = () => {
                                 <h4 className="fw-bold text-success">₹{cartTotal}</h4>
                             </div>
                             
-                            <button className="btn btn-success w-100 py-3 rounded-pill fw-bold fs-5 shadow-sm">
+                            <Link to="/checkout-details" className="btn btn-success w-100 py-3 rounded-pill fw-bold fs-5 shadow-sm d-flex align-items-center justify-content-center text-decoration-none">
                                 Proceed to Checkout
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

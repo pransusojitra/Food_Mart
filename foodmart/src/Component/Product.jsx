@@ -12,6 +12,7 @@ const Product = () => {
         {products.map(item => (
           <Productcard
             key={item._id}
+            id={item._id}
             img={item.image}
             title={item.title}
             unit={item.unit}

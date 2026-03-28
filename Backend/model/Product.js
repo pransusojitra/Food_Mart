@@ -4,26 +4,36 @@ const productSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     unit: {
       type: String,
-      required: true
+      required: true,
     },
     rating: {
       type: Number,
-      default: 0
+      default: 0,
     },
     price: {
       type: Number,
-      required: true
+      required: true,
     },
     image: {
       type: String, // image path
-      required: true
-    }
+      required: true,
+    },
+    description: {
+      type: String,
+      default: "",
+    },
+    nutrients: {
+      type: [String],
+      default: ["Vitamin C", "Fiber", "Energy"],
+    },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Product", productSchema);
+// Check if model already exists to prevent OverwriteModelError
+const Product = mongoose.models.Product || mongoose.model("Product", productSchema);
+module.exports = Product;

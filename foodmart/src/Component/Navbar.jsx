@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 import "./Navbar.css";
 import img from "../assets/logo.png"
 
 const Navbar = () => {
-    const { cartItems, cartTotal } = useCart();
+    const { cartItems } = useCart();
+    const { user, logout } = useAuth();
     
     // Total quantity of items in cart
     const totalQty = cartItems.reduce((acc, item) => acc + item.qty, 0);
@@ -49,7 +51,30 @@ const Navbar = () => {
                         </div>
 
                         <div className='d-flex align-items-center gap-3 fs-5'>
-                            <Link to="/" className="text-dark"><i className="fa-regular fa-user"></i></Link>
+                            {user ? (
+                                <div className="dropdown">
+                                    <button className="btn btn-link text-dark p-0 dropdown-toggle no-caret" type="button" data-bs-toggle="dropdown">
+                                        <i className="fa-regular fa-user"></i>
+                                    </button>
+                                    <ul className="dropdown-menu dropdown-menu-end shadow-sm border-0 mt-2">
+                                        <li className="dropdown-header fw-bold">Hi, {user.name}</li>
+                                        <li><hr className="dropdown-divider" /></li>
+                                        <li>
+                                            <Link className="dropdown-item" to={user.role === 'owner' ? "/admin-owner" : "/admin-customer"}>
+                                                <i className="fa-solid fa-gauge me-2"></i> Dashboard
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <button className="dropdown-item text-danger" onClick={logout}>
+                                                <i className="fa-solid fa-right-from-bracket me-2"></i> Logout
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            ) : (
+                                <Link to="/login" className="text-dark"><i className="fa-regular fa-user"></i></Link>
+                            )}
+                            
                             <Link to="/" className="text-dark position-relative">
                                 <i className="fa-regular fa-heart"></i>
                                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style={{ fontSize: '10px' }}>0</span>

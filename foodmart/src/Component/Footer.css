@@ -1,0 +1,21 @@
+.hover-success:hover {
+    color: #198754 !important;
+    transition: color 0.3s ease;
+}
+
+footer .btn-outline-success {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+footer input::placeholder {
+    color: #999;
+}
+
+footer {
+    font-family: 'Inter', sans-serif;
+}
