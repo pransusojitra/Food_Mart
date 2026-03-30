@@ -26,9 +26,9 @@ const Ourproduct = () => {
     return (
         <div className='tag-btnn'>
             {buttons.map((text, index) =>(
-                <buttons key={index} className="tag-btn">
+                <button key={index} className="tag-btn">
                     {text}
-                </buttons>
+                </button>
             ))}
         </div>
     );

@@ -6,52 +6,66 @@
     height: 45px;
 }
 
+/* DESKTOP SEARCH BAR (Visible > 425px) */
+.navbar-search-container {
+    display: flex;
+    flex-grow: 1;
+    margin: 0 1.5rem;
+}
+
+/* MOBILE REFINEMENTS (ONLY <= 768px) */
+@media (max-width: 768px) {
+    .container-fluid {
+        flex-direction: column !important;
+        gap: 1rem;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .navbar-logo-container, 
+    .navbar-actions-container {
+        width: 100%;
+        display: flex;
+        justify-content: center !important;
+    }
+
+    .nav-logo {
+        height: 35px;
+    }
+
+    .icon-row {
+        gap: 2.5rem !important; /* Proper spacing for centered icons */
+        width: 100%;
+        justify-content: center;
+    }
+
+    .icon-row i {
+        font-size: 1.5rem !important;
+    }
+
+    .navbar-search-container {
+        display: none !important; /* Hide search on mobile/tablet */
+    }
+}
+
+/* LAPTOP/DESKTOP ( > 768px) */
+@media (min-width: 769px) {
+    .container-fluid {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+    }
+}
+
 .cart-dropdown {
     border-radius: 12px !important;
     animation: fadeIn 0.3s ease;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.cart-items-list::-webkit-scrollbar {
-    width: 6px;
-}
-
-.cart-items-list::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-}
-
-.cart-items-list::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
-
-.cart-items-list::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-.navbar-brand img {
-    transition: transform 0.3s ease;
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .navbar-brand:hover img {
     transform: scale(1.05);
 }
-
-.nav-link-icon {
-    transition: color 0.3s ease;
-}
-
-.nav-link-icon:hover {
-    color: #28a745 !important;
-}

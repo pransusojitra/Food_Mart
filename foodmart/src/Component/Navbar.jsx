@@ -14,18 +14,18 @@ const Navbar = () => {
 
     return (
         <div className="sticky-top">
-            <nav className="navbar navbar-expand-lg bg-white shadow-sm py-3">
-                <div className="container-fluid px-4 d-flex align-items-center justify-content-between">
+            <nav className="navbar navbar-expand-lg bg-white shadow-sm py-3 px-2">
+                <div className="container-fluid d-flex align-items-center justify-content-between flex-nowrap row-gap-3">
 
-                    {/* Left: Logo */}
-                    <div className="d-flex align-items-center">
+                    {/* Left: Logo (Centered on mobile via CSS) */}
+                    <div className="navbar-logo-container">
                         <Link className="navbar-brand d-flex align-items-center m-0" to="/">
                             <img src={img} alt="logo" className="nav-logo" />
                         </Link>
                     </div>
 
-                    {/* Center: Search (Hidden on small mobile) */}
-                    <div className="collapse navbar-collapse mx-4 border rounded-pill bg-light d-none d-lg-flex" style={{ height: "45px" }}>
+                    {/* Center: Search (Hidden on small mobile <= 425px) */}
+                    <div className="navbar-search-container border rounded-pill bg-light" style={{ height: "45px" }}>
                         <div className="dropdown border-end">
                             <button className="btn dropdown-toggle border-0 px-3 fw-medium text-muted" type="button" data-bs-toggle="dropdown">
                                 All Categories
@@ -44,13 +44,13 @@ const Navbar = () => {
                     </div>
 
                     {/* Right: Actions */}
-                    <div className='d-flex align-items-center gap-3 gap-lg-4'>
+                    <div className='navbar-actions-container d-flex align-items-center gap-3 gap-lg-4'>
                         <div className='text-end d-none d-xl-block border-end pe-3'>
                             <p className='text-muted small mb-0'>24/7 Support</p>
                             <h6 className='fw-bold mb-0 text-dark'>+980-34984089</h6>
                         </div>
 
-                        <div className='d-flex align-items-center gap-3 fs-5'>
+                        <div className='d-flex align-items-center gap-3 fs-5 icon-row'>
                             {user ? (
                                 <div className="dropdown">
                                     <button className="btn btn-link text-dark p-0 dropdown-toggle no-caret" type="button" data-bs-toggle="dropdown">
@@ -80,17 +80,14 @@ const Navbar = () => {
                                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style={{ fontSize: '10px' }}>0</span>
                             </Link>
                             
-                            {/* CART LINK */}
                             <Link to="/cart" className="text-dark position-relative">
-                                <i className="fa-solid fa-cart-shopping fs-4"></i>
+                                <i className="fa-solid fa-cart-shopping"></i>
                                 {totalQty > 0 && (
                                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success" style={{ fontSize: '10px' }}>
                                         {totalQty}
                                     </span>
                                 )}
                             </Link>
-
-                            <i className="fa-solid fa-bars d-lg-none ms-2"></i>
                         </div>
                     </div>
 
@@ -101,5 +98,3 @@ const Navbar = () => {
 }
 
 export default Navbar;
-
-

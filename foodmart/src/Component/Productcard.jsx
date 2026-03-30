@@ -21,13 +21,17 @@ const Productcard = ({
         className="card d-flex flex-column shadow-lg border-white rounded-4"
         style={{ width: "16rem", height: "400px" }}
       >
-        <Link to={`/product/${id}`}>
-            <img
-            src={`${UPLOADS_BASE_URL}/${img}`}
-            alt={title}
+        <Link to={`/product/${id}`} className="d-flex justify-content-center mt-3 text-decoration-none">
+          <div 
+            className="rounded-4 d-flex align-items-center justify-content-center" 
             style={{ backgroundColor: "#fafafa", height: "13rem", width: "14rem" }}
-            className="rounded-4 mx-auto mt-3"
+          >
+            <img
+              src={`${UPLOADS_BASE_URL}/${img}`}
+              alt={title}
+              style={{ maxHeight: "11rem", maxWidth: "12rem", objectFit: "contain" }}
             />
+          </div>
         </Link>
 
         <div className="card-body d-flex flex-column gap-2">

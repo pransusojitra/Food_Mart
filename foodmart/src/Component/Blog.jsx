@@ -14,8 +14,8 @@ const Blog = () => {
                 />
                 <div className="card-body">
                     <div className='d-flex align-items-center gap-3 text-muted small'>
-                        <p className='mb-0'><i class="fa-regular fa-calendar me-1"></i>22 Aug 2021</p>
-                        <p className='mb-0'><i class="fa-regular fa-folder me-1"></i>tips & tricks</p>
+                        <p className='mb-0'><i className="fa-regular fa-calendar me-1"></i>22 Aug 2021</p>
+                        <p className='mb-0'><i className="fa-regular fa-folder me-1"></i>tips & tricks</p>
                     </div>
                     <h3 className="card-text">Fresh Citrus Fruit Combo</h3>
                     <p>A vibrant mix of fresh citrus fruits including oranges, lemons, limes, and grapefruit.</p>
@@ -30,8 +30,8 @@ const Blog = () => {
                 />
                 <div className="card-body">
                     <div className='d-flex align-items-center gap-3 text-muted small'>
-                        <p className='mb-0'><i class="fa-regular fa-calendar me-1"></i>25 Aug 2021</p>
-                        <p className='mb-0'><i class="fa-regular fa-folder me-1"></i>trending</p>
+                        <p className='mb-0'><i className="fa-regular fa-calendar me-1"></i>25 Aug 2021</p>
+                        <p className='mb-0'><i className="fa-regular fa-folder me-1"></i>trending</p>
                     </div>
                     <h3 className="card-text">Premium Cashew Butter</h3>
                     <p>This premium cashew butter delivers a smooth, creamy texture made from high-quality cashews.</p>
@@ -46,8 +46,8 @@ const Blog = () => {
                 />
                 <div className="card-body">
                     <div className='d-flex align-items-center gap-3 text-muted small'>
-                        <p className='mb-0'><i class="fa-regular fa-calendar me-1"></i>28 Aug 2021</p>
-                        <p className='mb-0'><i class="fa-regular fa-folder me-1"></i>inspiration</p>
+                        <p className='mb-0'><i className="fa-regular fa-calendar me-1"></i>28 Aug 2021</p>
+                        <p className='mb-0'><i className="fa-regular fa-folder me-1"></i>inspiration</p>
                     </div>
                     <h3 className="card-text">Fresh Organic Broccoli</h3>
                     <p>Broccoli is one of the most nutrient-dense vegetables, widely known for its health-boosting properties.</p>
