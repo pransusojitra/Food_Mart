@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "env": {
+    "VITE_API_URL": "@VITE_API_URL",
+    "VITE_UPLOADS_URL": "@VITE_UPLOADS_URL"
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
