@@ -1,0 +1,16 @@
+{
+  "projects": [
+    {
+      "name": "food-mart-backend",
+      "rootDirectory": "Backend"
+    },
+    {
+      "name": "food-mart-frontend", 
+      "rootDirectory": "foodmart"
+    },
+    {
+      "name": "food-mart-admin",
+      "rootDirectory": "Admin"
+    }
+  ]
+}
