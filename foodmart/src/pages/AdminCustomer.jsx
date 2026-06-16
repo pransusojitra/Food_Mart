@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
+import { API_BASE_URL } from '../apiConfig';
 
 const AdminCustomer = () => {
     const { user, logout } = useAuth();
@@ -11,7 +12,7 @@ const AdminCustomer = () => {
         const fetchOrders = async () => {
             if (user?.id) {
                 try {
-                    const res = await axios.get(`http://localhost:5000/api/orders/user/${user.id}`);
+                    const res = await axios.get(`${API_BASE_URL}/orders/user/${user.id}`);
                     setOrders(res.data);
                 } catch (err) {
                     console.error("Error fetching orders:", err);

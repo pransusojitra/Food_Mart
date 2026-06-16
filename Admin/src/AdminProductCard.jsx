@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { API_BASE_URL, UPLOADS_BASE_URL } from "./apiConfig";
 
 const AdminProductCard = ({ product, onDelete }) => {
   const handleDelete = async () => {
@@ -11,7 +12,7 @@ const AdminProductCard = ({ product, onDelete }) => {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/products/${product._id}`
+        `${API_BASE_URL}/products/${product._id}`
       );
       onDelete(); // 🔁 refresh list
     } catch (err) {
@@ -23,7 +24,7 @@ const AdminProductCard = ({ product, onDelete }) => {
   return (
     <div className="card h-100 shadow-sm rounded-4">
       <img
-        src={`http://localhost:5000/${product.image}`}
+        src={`${UPLOADS_BASE_URL}/${product.image}`}
         alt={product.title}
         className="card-img-top p-3"
         style={{ height: "180px", objectFit: "contain" }}

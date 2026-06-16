@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
+import { API_BASE_URL } from '../apiConfig';
 
 const CheckoutDetails = () => {
     const { cartItems, cartTotal } = useCart();
@@ -42,7 +43,7 @@ const CheckoutDetails = () => {
         };
 
         try {
-            await axios.post('http://localhost:5000/api/orders/add', orderData);
+            await axios.post(`${API_BASE_URL}/orders/add`, orderData);
             alert('Order placed successfully!');
             // Ideally: clear cart here. For now, redirect to dashboard.
             navigate('/admin-customer');

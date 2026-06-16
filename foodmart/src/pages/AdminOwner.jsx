@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
+import { API_BASE_URL, UPLOADS_BASE_URL } from '../apiConfig';
 
-const API_URL = "http://localhost:5000/api/products";
+const API_URL = `${API_BASE_URL}/products`;
 
 const AdminOwner = () => {
     const { logout } = useAuth();
@@ -113,7 +114,7 @@ const AdminOwner = () => {
                                     {products.map(p => (
                                         <tr key={p._id}>
                                             <td>
-                                                <img src={`http://localhost:5000/${p.image}`} alt={p.title} className="rounded" style={{ width: '40px', height: '40px', objectFit: 'cover' }} />
+                                                <img src={`${UPLOADS_BASE_URL}/${p.image}`} alt={p.title} className="rounded" style={{ width: '40px', height: '40px', objectFit: 'cover' }} />
                                             </td>
                                             <td>{p.title}</td>
                                             <td>₹{p.price}</td>

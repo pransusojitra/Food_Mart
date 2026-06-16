@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { UPLOADS_BASE_URL } from '../apiConfig';
 
 const Cart = () => {
     const { cartItems, cartTotal, increaseQty, decreaseQty } = useCart();
@@ -24,7 +25,7 @@ const Cart = () => {
                             {cartItems.map(item => (
                                 <div key={item._id} className="d-flex align-items-center gap-4 mb-3 pb-3 border-bottom">
                                     <img 
-                                        src={`http://localhost:5000/${item.image}`} 
+                                        src={`${UPLOADS_BASE_URL}/${item.image}`} 
                                         alt={item.title} 
                                         className="rounded-4" 
                                         style={{ width: '100px', height: '100px', objectFit: 'cover' }} 
