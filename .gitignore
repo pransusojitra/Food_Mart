@@ -30,6 +30,6 @@ dist/
 build/
 
 # App Specific
-Backend/uploads/
+Backend/
 foodmart/dist/
 Admin/dist/
